@@ -1,0 +1,52 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Geolocalización
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Geolocalización</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <!-- Tarjeta de Coordenadas (según la instrucción) -->
+  <ion-card *ngIf="latitude() !== null && longitude() !== null">
+    <ion-card-header>
+      <ion-card-title>Coordenadas actuales</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p><strong>Latitud:</strong> {{ latitude() }}</p>
+      <p><strong>Longitud:</strong> {{ longitude() }}</p>
+
+      <!-- 1. Hipervínculo que nos lleva a la posición GPS de su sitio -->
+      <div class="ion-margin-top">
+        <a [href]="siteUrl" target="_blank">Abrir posición GPS en Google Maps</a>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- 2. Hipervínculo que muestre su ruta a casa o al parque -->
+  <ion-card>
+    <ion-card-content>
+      <h3>Ruta de Interés</h3>
+      <a [href]="routeUrl" target="_blank">Ver ruta completa en Google Maps</a>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Botones solicitados y agregados para guardar TXT -->
+  <div class="ion-margin-top">
+    <ion-button expand="block" color="primary" (click)="getCurrentPosition()">Obtener Ubicación</ion-button>
+    
+    <!-- 3. Botón que guarde su ubicación en un archivo txt -->
+    <ion-button expand="block" color="secondary" (click)="guardarUbicacionTxt()">Guardar Ubicación (.txt)</ion-button>
+    
+    <!-- 4. Botón que guarde su ruta en un archivo txt -->
+    <ion-button expand="block" color="tertiary" (click)="guardarRutaTxt()">Guardar Ruta (.txt)</ion-button>
+    
+    <ion-button expand="block" color="danger" (click)="clearPosition()">Limpiar</ion-button>
+  </div>
+</ion-content>
