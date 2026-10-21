@@ -33,7 +33,8 @@ Capturas de Pantalla
 
 
 3) Obtencion de la ruta
-<img width="1080" height="733" alt="image" src="https://github.com/user-attachments/assets/04ec4a7e-9da5-4fac-be17-09c0105c8e23" />
+<img width="720" height="1600" alt="image" src="https://github.com/user-attachments/assets/8d5404c7-7a83-487e-b66f-8ee65a5362ad" />
+
 
 
 
